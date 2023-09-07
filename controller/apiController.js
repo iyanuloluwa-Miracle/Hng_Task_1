@@ -18,7 +18,7 @@ const sampleData = {
     now.setMinutes(now.getMinutes() - 2);
   
     // Format the UTC time as "2023-09-07T08:48:12Z"
-    const formattedUtcTime = now.toISOString().replace(/\.\d{3}Z$/, 'Z');
+    const formattedUtcTime = now.toISOString().replace(/\.\d{3}$/, 'Z');
   
     const responseData = {
       slack_name: slackName,
