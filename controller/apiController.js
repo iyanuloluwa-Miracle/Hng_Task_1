@@ -16,12 +16,14 @@ const sampleData = {
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
     const now = new Date();
     now.setMinutes(now.getMinutes() - 2);
-    const utcTime = now.toISOString();
+  
+    // Format the UTC time as "2023-09-07T08:48:12Z"
+    const formattedUtcTime = now.toISOString().replace(/\.\d{3}Z$/, 'Z');
   
     const responseData = {
       slack_name: slackName,
       current_day: currentDay,
-      utc_time: utcTime,
+      utc_time: formattedUtcTime,
       track: track, 
       github_file_url: sampleData.github_file_url,
       github_repo_url: sampleData.github_repo_url,
