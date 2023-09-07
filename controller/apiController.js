@@ -1,4 +1,3 @@
-
 const sampleData = {
     slack_name: 'example_name',
     track: 'backend',
@@ -20,10 +19,12 @@ const sampleData = {
     const utcTime = now.toISOString();
   
     const responseData = {
-      ...sampleData,
       slack_name: slackName,
       current_day: currentDay,
       utc_time: utcTime,
+      track: track, 
+      github_file_url: sampleData.github_file_url,
+      github_repo_url: sampleData.github_repo_url,
       status_code: 200,
     };
   
