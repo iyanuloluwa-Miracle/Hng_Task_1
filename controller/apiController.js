@@ -12,13 +12,11 @@ const sampleData = {
     if (!slackName || !track) {
       return res.status(400).json({ error: 'Missing required parameters' });
     }
-  
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
     const now = new Date();
-    now.setMinutes(now.getMinutes() - 2);
   
-    // Format the UTC time as "2023-09-07T08:48:12Z"
-    const formattedUtcTime = now.toISOString().replace(/\.\d{3}$/, 'Z');
+    // Format the UTC time as "2023-09-07T09:19:51Z"
+    const formattedUtcTime = now.toISOString().split('.')[0] + 'Z';
   
     const responseData = {
       slack_name: slackName,
